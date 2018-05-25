@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script type="text/javascript">
+      function onLoad() {
+        var sec = parseInt(document.location.search.substr(1));
+
+        if (!isNaN(sec))
+          mainPlayer.currentTime = sec;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>
+      <%= title %>
+    </h1>
+
+    <video id="videoPlayer" autoplay controls onloadedmetadata="onLoad()">
+      <source src="d.mp4" />
+    </video>
+
+    <audio controls>
+      <source src="music.mp3"/>
+    </audio>
+  </body>
+
+</html>
